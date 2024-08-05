@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+    <style>
+        /*table, tr, td, th {*/
+        /*    border: 1px solid;*/
+        /*}*/
+        th,td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<table style="align-content: center">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="number" id="num"/></td>
+        <td><select name="currency1" id="currency1">
+            <option value="VN">VietNam</option>
+            <option value="USD">USD</option>
+        </select></td>
+        <td><select name="currency2" id="currency2">
+            <option value="VN">VietNam</option>
+            <option value="USD">USD</option>
+        </select></td>
+        <td><button onclick="chuyenDoi()"><b>Convert</b></button></td>
+    </tr>
+</table>
+<p id="ketQua"></p>
+</body>
+<script>
+    function chuyenDoi() {
+        let cur1 = document.getElementById("currency1").value;
+        let cur2 = document.getElementById("currency2").value;
+        let soLuong = + document.getElementById("num").value;
+        let result;
+        console.log(cur1);
+        console.log(cur2);
+        console.log(soLuong);
+        if (cur1 === "VN") {
+            if (cur2 === "USD") {
+                result = soLuong*0.0000424267688296908;
+            }
+            else {
+                result = soLuong;
+            }
+        }
+        else {
+            if (cur2 === "VN") {
+                result = soLuong/0.0000424267688296908;
+            }
+            else {
+                result = soLuong;
+            }
+        }
+        document.getElementById("ketQua").innerText = "Result: "+result;
+    }
+</script>
+</html>

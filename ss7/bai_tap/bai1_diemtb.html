@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable, Data Type and Operator</title>
+</head>
+<body>
+<h2>Bài 1: Tính điểm trung bình</h2>
+Vật lý:   <input type = "number" id="vatLy"> <br/>
+Hóa học:  <input type = "number" id="hoaHoc"> <br/>
+Sinh học: <input type = "number" id="sinhHoc"> <br/>
+<button onclick="bai1()">Xem kết quả</button><br/>
+<p id = "hienThiKetQua"></p>
+
+<h2>Bài 2: Nhiet độ </h2>
+Nhập độ C: <input tyoe = "number" id = "doC">
+<button onclick="bai2()">Chuyển đổi</button><br/>
+<p id = "DoF"></p>
+
+<h2>Bài 3: Tính chu vi , diện tích hình tròn</h2>
+Nhập bánkinhsh: <input type = "number" id = "r">
+<button onclick="bai3()">Result</button><br/>
+<p id = "C"></p><br>
+<p id = "S"></p><br>
+</body>
+<script>
+    function bai1(){
+        let diemLy = +document.getElementById("vatLy").value
+        let diemHoa = +document.getElementById("hoaHoc").value
+        let diemSinh = +document.getElementById("sinhHoc").value
+        let tong = diemLy +diemHoa+ diemSinh
+        let tbc= tong/3
+        document.getElementById("hienThiKetQua").innerHTML = "<b>Điểm trung bình: </b>" + tbc
+    }
+
+    function bai2(){
+        let doC = + document.getElementById("doC").value
+        let doF = doC/5*9 +32
+        document.getElementById("DoF").innerHTML = doF + "<b> doF </b>"
+    }
+
+    function bai3(){
+        let r = + document.getElementById("r").value
+        let C = 2* 3.14 * r
+        let S = 3.14 *r*r
+        document.getElementById("C").innerHTML = "<b>Chu Vi: <b/>" + C
+        document.getElementById("S").innerHTML = "<b>Dien tich: <b/>" + S
+    }
+</script>
+</html>
